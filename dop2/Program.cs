@@ -12,13 +12,13 @@ bool FindElInMas(string[] array, string el){
     return true;
 }
 
-List<string> split(string s){
+List<string> split(string s, string s2){
     List<string> result = new List<string>();
-    s += "; ";
+    s += s2;
     string s1 = "";
-    int j = 0;
+
     for (int i = 0; i < s.Length - 1;i++){
-        if ("; " == s[i].ToString() + s[i + 1].ToString()){
+        if (s2 == s[i].ToString() + s[i + 1].ToString()){
             result.Add(s1);
             s1 = "";
             i++;
@@ -37,3 +37,4 @@ void Print(List<string> s){
 }
 
 Print(split("123; 124; aasdas; asda sd"));
+double a = Convert.ToDouble(123);

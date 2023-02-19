@@ -2,11 +2,8 @@
 Доп на вход массив удлать все повторения.
 1.Массив для уникальных значений
 2.Функция ищет значение в массиве
-
-
 qwe; 123; asd; dgfdg; 123123; dfgdfg; 34345; gdfgdf; sdfsdf
 */
-
 
 bool FindElInMas(List<string> array, string el, int k = 0)
 {
@@ -19,18 +16,15 @@ List<string> DeleteValues(List<string> array, int j)
 {
     List<string> result = new List<string>();
     for (int i = 0; i < array.Count; i++)
-        if (i != j)
+        if(i != j)
             result.Add(array[i]);
     return result;
-}
+} 
 
-List<string> DeleteEqualValues(List<string> array)
-{
-
-    for (int i = 0; i < array.Count; i++)
-    {
-        if (FindElInMas(array, array[i], i + 1))
-        {
+List<string> DeleteEqualValues(List<string> array){
+    
+    for (int i = 0; i < array.Count; i++){
+        if(FindElInMas(array, array[i], i + 1)){
             array = DeleteValues(array, i);
             i--;
         }
